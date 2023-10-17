@@ -31,3 +31,11 @@ Route::get('r2', function () {
 Route::get('hello/{name?}', function ($name = 'Everybody') {
     return 'Hello ' . $name;
 });
+Route::get('dashboard', function () {
+    return 'dashboard';
+});
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('dashboard', function () {
+        return 'admin dashboard';
+    });
+});
